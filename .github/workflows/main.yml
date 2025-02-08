@@ -15,7 +15,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Update File (Step for kushaodekar@gmail.com.in)
+      - name: Update File (Step for 21f1002821@ds.study.iitm.ac.in)
         run: |
           echo "Last run: $(date)" > last_run.txt
 
