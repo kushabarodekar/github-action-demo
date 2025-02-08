@@ -25,6 +25,4 @@ jobs:
           git config --global user.email "21f1002821@ds.study.iitm.ac.in"
           git add last_run.txt
           git commit -m "Automated daily commit: $(date)"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/kushabarodekar/github-action-demo.git HEAD:main
