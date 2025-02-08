@@ -2,8 +2,7 @@ name: 21f1002821@ds.study.iitm.ac.in
 
 on:
   schedule:
-    # Runs every day at 06:30 UTC (Adjust as needed)
-    - cron: '55 12 * * * '
+    - cron: '30 6 * * *' # Runs daily at 06:30 UTC
 
   workflow_dispatch: # Allows manual trigger
 
@@ -24,5 +23,5 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "21f1002821@ds.study.iitm.ac.in"
           git add last_run.txt
-          git commit -m "Automated daily commit: $(date)"
+          git commit -m "Automated daily commit: $(date)" || echo "No changes to commit"
           git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/kushabarodekar/github-action-demo.git HEAD:main
