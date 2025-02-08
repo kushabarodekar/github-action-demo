@@ -3,7 +3,7 @@ name: 21f1002821@ds.study.iitm.ac.in
 on:
   schedule:
     # Runs every day at 06:30 UTC (Adjust as needed)
-    - cron: '40 12 * * * '
+    - cron: '55 12 * * * '
 
   workflow_dispatch: # Allows manual trigger
 
@@ -27,4 +27,4 @@ jobs:
           git commit -m "Automated daily commit: $(date)"
           git push
         env:
-          GITHUB_TOKEN: "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"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
