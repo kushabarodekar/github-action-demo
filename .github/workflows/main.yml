@@ -22,7 +22,7 @@ jobs:
       - name: Commit and Push Changes
         run: |
           git config --global user.name "GitHub Actions"
-          git config --global user.email "kushaodekar@gmail.com.in"
+          git config --global user.email "21f1002821@ds.study.iitm.ac.in"
           git add last_run.txt
           git commit -m "Automated daily commit: $(date)"
           git push
