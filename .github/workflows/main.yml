@@ -27,4 +27,4 @@ jobs:
           git commit -m "Automated daily commit: $(date)"
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: "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"
