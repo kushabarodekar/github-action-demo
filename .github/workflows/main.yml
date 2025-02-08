@@ -2,7 +2,8 @@ name: 21f1002821@ds.study.iitm.ac.in
 
 on:
   schedule:
-    - cron: '30 6 * * *' # Runs daily at 06:30 UTC
+    # Runs every day at 06:30 UTC (Adjust as needed)
+    - cron: '30 6 * * *'
 
   workflow_dispatch: # Allows manual trigger
 
@@ -14,14 +15,16 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Update File (Step for 21f1002821@ds.study.iitm.ac.in)
+      - name: Update File (Step for kushabarodekar@gmail.com)
         run: |
           echo "Last run: $(date)" > last_run.txt
 
       - name: Commit and Push Changes
         run: |
           git config --global user.name "GitHub Actions"
-          git config --global user.email "21f1002821@ds.study.iitm.ac.in"
+          git config --global user.email "kushabarodekar@gmail.com"
           git add last_run.txt
-          git commit -m "Automated daily commit: $(date)" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/kushabarodekar/github-action-demo.git HEAD:main
+          git commit -m "Automated daily commit: $(date)"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
